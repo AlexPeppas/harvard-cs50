@@ -1,0 +1,13 @@
+[project]
+name = "harvard-cs50"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.121.3",
+    "numpy>=2.3.5",
+    "termcolor>=3.2.0",
+    "uvicorn>=0.38.0",
+    "varname>=0.15.0",
+]
