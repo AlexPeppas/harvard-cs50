@@ -1,4 +1,5 @@
 import numpy as np
+import dataset.data_generator as data_gen
 
 np.random.seed(0)
 
@@ -6,6 +7,9 @@ np.random.seed(0)
 X = [[1, 2, 3, 2.5],
     [2.0, 5.0, -1.0, 2.0],
     [-1.5, 2.7, 3.3, -0.8]]
+
+# let's create more realistic data of a spiral consisted of 3 different classes and 100 points each
+X,y = data_gen.create_data(100,3)
 
 class Layer_Dense:
     def __init__(self, n_inputs, n_neurons_per_layer):
@@ -15,9 +19,16 @@ class Layer_Dense:
         pass
 
     def forward(self, inputs):
-        self.outputs = np.dot(inputs, self.weights) + self.biases
+        self.outputs = np.dot(inputs, self.weights) + self.biases\
+        # run activation function directly on the calculated outputs of the layer
+        self.outputs = Activation_ReLu.forward(self.outputs)
 
-layer1 = Layer_Dense(4, 6)
+class Activation_ReLu:
+    @staticmethod
+    def forward(inputs) -> np.ndarray:
+        return np.maximum(0, inputs)
+    
+layer1 = Layer_Dense(2, 6)
 layer2 = Layer_Dense(6, 7)
 layer3 = Layer_Dense(7,2)
 
