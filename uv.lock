@@ -235,6 +235,7 @@ source = { virtual = "." }
 dependencies = [
     { name = "fastapi" },
     { name = "matplotlib" },
+    { name = "nnfs" },
     { name = "numpy" },
     { name = "termcolor" },
     { name = "uvicorn" },
@@ -245,6 +246,7 @@ dependencies = [
 requires-dist = [
     { name = "fastapi", specifier = ">=0.121.3" },
     { name = "matplotlib", specifier = ">=3.10.8" },
+    { name = "nnfs", specifier = ">=0.5.1" },
     { name = "numpy", specifier = ">=2.3.5" },
     { name = "termcolor", specifier = ">=3.2.0" },
     { name = "uvicorn", specifier = ">=0.38.0" },
@@ -412,6 +414,18 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/04/30/3afaa31c757f34b7725ab9d2ba8b48b5e89c2019c003e7d0ead143aabc5a/matplotlib-3.10.8-pp311-pypy311_pp73-macosx_10_15_x86_64.whl", hash = "sha256:6da7c2ce169267d0d066adcf63758f0604aa6c3eebf67458930f9d9b79ad1db1", size = 8249198 },
     { url = "https://files.pythonhosted.org/packages/48/2f/6334aec331f57485a642a7c8be03cb286f29111ae71c46c38b363230063c/matplotlib-3.10.8-pp311-pypy311_pp73-macosx_11_0_arm64.whl", hash = "sha256:9153c3292705be9f9c64498a8872118540c3f4123d1a1c840172edf262c8be4a", size = 8136817 },
     { url = "https://files.pythonhosted.org/packages/73/e4/6d6f14b2a759c622f191b2d67e9075a3f56aaccb3be4bb9bb6890030d0a0/matplotlib-3.10.8-pp311-pypy311_pp73-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:1ae029229a57cd1e8fe542485f27e7ca7b23aa9e8944ddb4985d0bc444f1eca2", size = 8713867 },
+]
+
+[[package]]
+name = "nnfs"
+version = "0.5.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "numpy" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/64/9f/4cd73be57e0551dbc98adfd710eaba902372e04af8a15f1a8b08cffdfc2e/nnfs-0.5.1.tar.gz", hash = "sha256:7e1ba80bdfb89d9909758ba7546f1f73c5f6b58c1d5899649ac488c2a4833213", size = 5049 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/06/8c/3003a41d5229e65da792331b060dcad8100a0a5b9760f8c2074cde864148/nnfs-0.5.1-py3-none-any.whl", hash = "sha256:fd04796da8e8f40a4dff9ad995a99944b8f0d68966d59e3e5d133659c7264c1f", size = 9145 },
 ]
 
 [[package]]
