@@ -18,7 +18,7 @@ class Layer_Dense:
         self.biases = np.zeros((1, n_neurons_per_layer)) # begin with 0s as biases for now
         pass
 
-    def forward(self, inputs, algo):
+    def forward(self, inputs, algo = None):
         self.outputs = np.dot(inputs, self.weights) + self.biases
         # run activation function directly on the calculated outputs of the layer
         if algo == "softmax":
@@ -34,16 +34,15 @@ class Activation_ReLu:
 class Activation_Softmax:
     @staticmethod
     def forward(inputs) -> np.ndarray:
-        exp_values = np.exp(inputs - np.max(inputs, axis = 1, keepdims= True))
-        probabilities = exp_values / np.sum(exp_values, axis =1, keepdims= True)
+        exp_values = np.exp(inputs - np.max(inputs, axis = 1, keepdims = True))
+        probabilities = exp_values / np.sum(exp_values, axis = 1, keepdims = True)
         return probabilities
-
 
 layer1 = Layer_Dense(2, 3)
 layer2 = Layer_Dense(3, 3)
 #layer3 = Layer_Dense(7,2)
 
-layer1.forward(X, algo= "relu")
+layer1.forward(X)
 layer2.forward(layer1.outputs, algo="softmax")
 #layer3.forward(layer2.outputs)
 
